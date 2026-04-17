@@ -8,6 +8,7 @@ This repository contains printable Norwegian language study sheets (studieark) d
 
 - `norsk-studieark.html` / `.pdf` — Base-level reference (conjunctions, prepositions, pronouns, etc.)
 - `norsk-studieark-b1.html` / `.pdf` — B1-level vocabulary reference (nouns by topic)
+- `norsk-studieark-verbs.html` / `.pdf` — Verb reference (essentials, modals, phrasal, 400+ common verbs)
 - `vocab-nouns.csv` — Noun vocabulary data organised in paired columns (Norwegian, English) per topic category
 - `vocab-verbs.csv` — Verb vocabulary data with similar paired-column structure
 
