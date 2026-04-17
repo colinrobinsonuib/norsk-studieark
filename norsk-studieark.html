@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norsk Studieark — Norwegian Quick Reference</title>
+  <style>
+    :root {
+      --color-conj: #2563eb;
+      --color-prep: #059669;
+      --color-pron: #7c3aed;
+      --color-that: #dc2626;
+      --color-it: #ea580c;
+      --color-da: #0891b2;
+      --color-multi: #be185d;
+      --color-qw: #4338ca;
+      --color-adv: #0d6e3f;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 7pt;
+      line-height: 1.2;
+      color: #1a1a1a;
+      padding: 3mm;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 10pt;
+      margin-bottom: 1px;
+      letter-spacing: 0.2px;
+    }
+    h1 small { font-size: 7pt; font-weight: normal; color: #555; }
+
+    .columns {
+      column-count: 2;
+      column-gap: 8px;
+      column-rule: 1px solid #ccc;
+    }
+
+    /* Sections CAN break across columns — this is essential for 2-col layout */
+    section {
+      margin-bottom: 3px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+
+    /* Keep headers glued to their content */
+    section h2 {
+      font-size: 7.5pt;
+      color: #fff;
+      padding: 1px 4px;
+      margin: 0;
+      letter-spacing: 0.2px;
+      break-after: avoid;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    section.conj h2 { background: var(--color-conj); }
+    section.prep h2 { background: var(--color-prep); }
+    section.pron h2 { background: var(--color-pron); }
+    section.that h2 { background: var(--color-that); }
+    section.it   h2 { background: var(--color-it); }
+    section.da   h2 { background: var(--color-da); }
+    section.multi h2 { background: var(--color-multi); }
+    section.qw h2 { background: var(--color-qw); }
+    section.adv h2 { background: var(--color-adv); }
+
+    section h3 {
+      font-size: 7pt;
+      padding: 1px 4px;
+      margin: 0;
+      border-bottom: 1px solid #eee;
+      break-after: avoid;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    section.conj h3 { color: var(--color-conj); background: #eff6ff; }
+    section.prep h3 { color: var(--color-prep); background: #ecfdf5; }
+    section.pron h3 { color: var(--color-pron); background: #f5f3ff; }
+    section.that h3 { color: var(--color-that); background: #fef2f2; }
+    section.it   h3 { color: var(--color-it);   background: #fff7ed; }
+    section.da   h3 { color: var(--color-da);   background: #ecfeff; }
+    section.multi h3 { color: var(--color-multi); background: #fdf2f8; }
+    section.qw h3 { color: var(--color-qw); background: #eef2ff; }
+    section.adv h3 { color: var(--color-adv); background: #ecfdf5; }
+
+    .content { padding: 1px 4px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1px 0;
+      font-size: 6.5pt;
+      break-inside: avoid;
+    }
+    th, td {
+      padding: 0.5px 2px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      font-weight: 600;
+      background: #f8f8f8;
+      font-size: 6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      color: #555;
+    }
+
+    /* Individual entries avoid breaking — small enough to fit in a column */
+    .word-entry {
+      margin: 1px 0;
+      padding: 1px 0;
+      border-bottom: 1px dotted #e5e5e5;
+      break-inside: avoid;
+    }
+    .word-entry:last-child { border-bottom: none; }
+
+    .no { font-weight: 700; color: #1a1a1a; }
+    .en { color: #555; font-style: italic; }
+    .expl { color: #444; font-size: 6pt; }
+    .ex {
+      color: #333;
+      font-size: 6pt;
+      margin: 0 0 0 5px;
+      padding-left: 3px;
+      border-left: 1px solid #ddd;
+    }
+    .ex em { font-style: normal; font-weight: 600; }
+
+    .note {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 2px;
+      padding: 1px 3px;
+      margin: 1px 0;
+      font-size: 6pt;
+      color: #92400e;
+      break-inside: avoid;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin: 1px 0;
+      break-inside: avoid;
+    }
+    .compare > div {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 2px;
+      padding: 1px 3px;
+      font-size: 6pt;
+    }
+    .compare .label {
+      font-weight: 700;
+      font-size: 5.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    @media print {
+      body { padding: 3mm; }
+      @page { margin: 4mm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Norsk Studieark <small>— Norwegian Quick Reference</small></h1>
+
+<div class="columns">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: CONJUNCTIONS                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="conj">
+  <h2>1. Konjunksjoner — Conjunctions</h2>
+
+  <h3>Sideordnende — Coordinating</h3>
+  <div class="content">
+
+    <div class="word-entry">
+      <span class="no">og</span> — <span class="en">and</span>
+      <div class="ex"><em>Jeg</em> liker kaffe <em>og</em> te. — I like coffee and tea.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">men</span> — <span class="en">but</span>
+      <div class="ex">Han er ung, <em>men</em> veldig smart. — He is young, but very smart.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">eller</span> — <span class="en">or</span>
+      <div class="ex">Vil du ha kaffe <em>eller</em> te? — Do you want coffee or tea?</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">for</span> — <span class="en">for, because</span>
+      <span class="expl">— literary/formal "because"; does NOT invert word order</span>
+      <div class="ex">Jeg gikk hjem, <em>for</em> jeg var trøtt. — I went home, for I was tired.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">så</span> — <span class="en">so, then</span>
+      <div class="ex">Det regnet, <em>så</em> vi ble hjemme. — It rained, so we stayed home.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">samt</span> — <span class="en">as well as, and (formal)</span>
+      <span class="expl">— more formal than "og"; used in lists and official writing</span>
+      <div class="ex">Mat <em>samt</em> drikke er inkludert. — Food as well as drinks are included.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">både … og</span> — <span class="en">both … and</span>
+      <div class="ex"><em>Både</em> barn <em>og</em> voksne likte filmen. — Both children and adults liked the film.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">enten … eller</span> — <span class="en">either … or</span>
+      <div class="ex"><em>Enten</em> kommer du nå, <em>eller</em> så drar vi. — Either you come now, or we leave.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">verken … eller</span> — <span class="en">neither … nor</span>
+      <div class="ex">Han liker <em>verken</em> fisk <em>eller</em> kjøtt. — He likes neither fish nor meat.</div>
+    </div>
+  </div>
+
+  <h3>Underordnende — Subordinating</h3>
+  <div class="content">
+
+    <div class="note">⚠ Subordinating conjunctions cause <strong>leddsetning</strong> (sub-clause) word order: subject + <em>ikke</em> + verb.</div>
+
+    <div class="word-entry">
+      <span class="no">fordi</span> — <span class="en">because</span>
+      <div class="ex">Jeg ble hjemme <em>fordi</em> jeg var syk. — I stayed home because I was sick.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">at</span> — <span class="en">that</span>
+      <span class="expl">— introduces a noun clause (see also Section 4)</span>
+      <div class="ex">Jeg tror <em>at</em> det stemmer. — I think that it's correct.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">hvis / dersom</span> — <span class="en">if</span>
+      <span class="expl">— "dersom" is more formal; both mean conditional "if"</span>
+      <div class="ex"><em>Hvis</em> det regner, tar jeg paraply. — If it rains, I'll take an umbrella.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">selv om</span> — <span class="en">even though, although</span>
+      <div class="ex">Han gikk ut <em>selv om</em> det regnet. — He went out even though it was raining.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">mens</span> — <span class="en">while, whereas</span>
+      <div class="ex">Hun leste <em>mens</em> han lagde mat. — She read while he cooked.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">siden</span> — <span class="en">since (causal / temporal)</span>
+      <div class="ex"><em>Siden</em> du er her, kan du hjelpe. — Since you're here, you can help.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">slik at</span> — <span class="en">so that</span>
+      <div class="ex">Snakk sakte <em>slik at</em> alle forstår. — Speak slowly so that everyone understands.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">uten at</span> — <span class="en">without (+ clause)</span>
+      <div class="ex">Han gikk <em>uten at</em> noen la merke til det. — He left without anyone noticing.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: PREPOSITIONS                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="prep">
+  <h2>2. Preposisjoner — Prepositions</h2>
+
+  <h3>Sted — Location</h3>
+  <div class="content">
+    <div class="word-entry">
+      <span class="no">i</span> — <span class="en">in, inside</span>
+      <div class="ex">Boka er <em>i</em> sekken. — The book is in the bag.</div>
+      <div class="ex">Hun bor <em>i</em> Oslo. — She lives in Oslo.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">på</span> — <span class="en">on, at</span>
+      <span class="expl">— "on" a surface; "at" a place (på jobb, på skolen)</span>
+      <div class="ex">Koppen er <em>på</em> bordet. — The cup is on the table.</div>
+      <div class="ex">Jeg er <em>på</em> jobb. — I'm at work.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">ved</span> — <span class="en">by, near, at</span>
+      <div class="ex">Huset ligger <em>ved</em> sjøen. — The house is by the sea.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">bak</span> — <span class="en">behind</span>
+      <div class="ex">Katten sitter <em>bak</em> sofaen. — The cat is sitting behind the sofa.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">foran</span> — <span class="en">in front of</span>
+      <div class="ex">Bilen er <em>foran</em> huset. — The car is in front of the house.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">mellom</span> — <span class="en">between, among</span>
+      <div class="ex">Banken er <em>mellom</em> butikken og kafeen. — The bank is between the shop and the café.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">over</span> — <span class="en">over, above</span>
+      <div class="ex">Lampa henger <em>over</em> bordet. — The lamp hangs over the table.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">under</span> — <span class="en">under, below</span>
+      <div class="ex">Hunden ligger <em>under</em> bordet. — The dog is under the table.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">blant</span> — <span class="en">among, amongst</span>
+      <div class="ex">Hun er populær <em>blant</em> venner. — She is popular among friends.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">innenfor</span> — <span class="en">within, inside (a boundary)</span>
+      <span class="expl">— emphasizes being within limits or boundaries</span>
+      <div class="ex"><em>Innenfor</em> budsjettet. — Within the budget.</div>
+      <div class="ex">Bli <em>innenfor</em>! — Stay inside!</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">utenfor</span> — <span class="en">outside (a boundary)</span>
+      <div class="ex">De ventet <em>utenfor</em> døra. — They waited outside the door.</div>
+    </div>
+  </div>
+
+  <h3>Retning — Direction / Particles</h3>
+  <div class="content">
+    <div class="word-entry">
+      <span class="no">til</span> — <span class="en">to, for</span>
+      <div class="ex">Jeg drar <em>til</em> Bergen. — I'm going to Bergen.</div>
+      <div class="ex">En gave <em>til</em> deg. — A gift for you.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">fra</span> — <span class="en">from</span>
+      <div class="ex">Hun er <em>fra</em> Norge. — She is from Norway.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">ut</span> — <span class="en">out</span>
+      <div class="ex">Gå <em>ut</em>! — Go out!</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">inn</span> — <span class="en">in (direction)</span>
+      <div class="ex">Kom <em>inn</em>! — Come in!</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">opp</span> — <span class="en">up</span>
+      <div class="ex">Gå <em>opp</em> trappen. — Go up the stairs.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">ned</span> — <span class="en">down</span>
+      <div class="ex">Han gikk <em>ned</em> til sjøen. — He walked down to the sea.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">gjennom</span> — <span class="en">through</span>
+      <div class="ex">Vi kjørte <em>gjennom</em> tunnelen. — We drove through the tunnel.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">mot</span> — <span class="en">towards, against</span>
+      <div class="ex">Han gikk <em>mot</em> døra. — He walked towards the door.</div>
+      <div class="ex">De spilte <em>mot</em> hverandre. — They played against each other.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">forbi</span> — <span class="en">past, by</span>
+      <div class="ex">Vi kjørte <em>forbi</em> huset. — We drove past the house.</div>
+    </div>
+  </div>
+
+  <h3>Tid — Time</h3>
+  <div class="content">
+    <div class="word-entry">
+      <span class="no">etter</span> — <span class="en">after</span>
+      <div class="ex"><em>Etter</em> middag. — After dinner.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">før</span> — <span class="en">before</span>
+      <div class="ex"><em>Før</em> klokka ti. — Before ten o'clock.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">under</span> — <span class="en">during</span>
+      <div class="ex"><em>Under</em> krigen. — During the war.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">i</span> — <span class="en">in, for (duration)</span>
+      <div class="ex"><em>I</em> to timer. — For two hours.</div>
+      <div class="ex"><em>I</em> juni. — In June.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">på</span> — <span class="en">on (days); in (time expressions)</span>
+      <div class="ex"><em>På</em> mandag. — On Monday.</div>
+      <div class="ex"><em>På</em> morgenen. — In the morning.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">om</span> — <span class="en">in (future time)</span>
+      <div class="ex"><em>Om</em> to timer. — In two hours. (from now)</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">siden</span> — <span class="en">ago, since</span>
+      <div class="ex">To dager <em>siden</em>. — Two days ago.</div>
+    </div>
+  </div>
+
+  <h3>Forhold — Relationship</h3>
+  <div class="content">
+    <div class="word-entry">
+      <span class="no">for</span> — <span class="en">for (purpose/benefit)</span>
+      <div class="ex">Det er bra <em>for</em> deg. — It's good for you.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">med</span> — <span class="en">with</span>
+      <div class="ex">Jeg bor <em>med</em> familien min. — I live with my family.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">av</span> — <span class="en">of, off, by</span>
+      <div class="ex">En <em>av</em> oss. — One of us.</div>
+      <div class="ex">Boka er skrevet <em>av</em> Ibsen. — The book is written by Ibsen.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">uten</span> — <span class="en">without</span>
+      <div class="ex">Kaffe <em>uten</em> melk. — Coffee without milk.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">om</span> — <span class="en">about</span>
+      <div class="ex">En bok <em>om</em> Norge. — A book about Norway.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: PRONOUNS                                        -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="pron">
+  <h2>3. Pronomen — Pronouns</h2>
+
+  <h3>Personlige pronomen — Personal Pronouns</h3>
+  <div class="content">
+    <table>
+      <tr>
+        <th>English</th>
+        <th>Subject</th>
+        <th>Object</th>
+        <th>Possessive (en / ei / et / fl)</th>
+      </tr>
+      <tr>
+        <td>I / me / my</td>
+        <td><strong>jeg</strong></td>
+        <td><strong>meg</strong></td>
+        <td><strong>min / mi / mitt / mine</strong></td>
+      </tr>
+      <tr>
+        <td>you / your</td>
+        <td><strong>du</strong></td>
+        <td><strong>deg</strong></td>
+        <td><strong>din / di / ditt / dine</strong></td>
+      </tr>
+      <tr>
+        <td>he / him / his</td>
+        <td><strong>han</strong></td>
+        <td><strong>ham</strong></td>
+        <td><strong>hans</strong></td>
+      </tr>
+      <tr>
+        <td>she / her</td>
+        <td><strong>hun</strong></td>
+        <td><strong>henne</strong></td>
+        <td><strong>hennes</strong></td>
+      </tr>
+      <tr>
+        <td>it (en-word)</td>
+        <td><strong>den</strong></td>
+        <td><strong>den</strong></td>
+        <td><strong>dens</strong> <span class="expl">(rare)</span></td>
+      </tr>
+      <tr>
+        <td>it (et-word)</td>
+        <td><strong>det</strong></td>
+        <td><strong>det</strong></td>
+        <td><strong>dets</strong> <span class="expl">(rare)</span></td>
+      </tr>
+      <tr>
+        <td>we / us / our</td>
+        <td><strong>vi</strong></td>
+        <td><strong>oss</strong></td>
+        <td><strong>vår / vår / vårt / våre</strong></td>
+      </tr>
+      <tr>
+        <td>you (pl) / your</td>
+        <td><strong>dere</strong></td>
+        <td><strong>dere</strong></td>
+        <td><strong>deres</strong></td>
+      </tr>
+      <tr>
+        <td>they / them / their</td>
+        <td><strong>de</strong></td>
+        <td><strong>dem</strong></td>
+        <td><strong>deres</strong></td>
+      </tr>
+    </table>
+
+    <div class="note">
+      💡 Possessives agree with the <em>noun they modify</em>, not the owner.<br>
+      min bok (en-word) · mi bok (feminine) · mitt hus (et-word) · mine bøker (plural)
+    </div>
+  </div>
+
+  <h3>Refleksiv: seg / sin / si / sitt / sine</h3>
+  <div class="content">
+    <div class="expl" style="margin-bottom:4px;">
+      The reflexive refers back to the <strong>3rd-person subject</strong> of the same clause.
+      Used for he/she/it/they when referring to their <em>own</em> things.
+    </div>
+
+    <table>
+      <tr>
+        <th>Form</th>
+        <th>Agrees with</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td><strong>seg</strong></td>
+        <td>object (himself/herself/themselves)</td>
+        <td>Han vasker <em>seg</em>. — He washes himself.</td>
+      </tr>
+      <tr>
+        <td><strong>sin</strong></td>
+        <td>en-word noun</td>
+        <td>Han leser boken <em>sin</em>. — He reads his (own) book.</td>
+      </tr>
+      <tr>
+        <td><strong>si</strong></td>
+        <td>ei-word noun (feminine)</td>
+        <td>Hun leser boka <em>si</em>. — She reads her (own) book.</td>
+      </tr>
+      <tr>
+        <td><strong>sitt</strong></td>
+        <td>et-word noun</td>
+        <td>Hun liker huset <em>sitt</em>. — She likes her (own) house.</td>
+      </tr>
+      <tr>
+        <td><strong>sine</strong></td>
+        <td>plural noun</td>
+        <td>De elsker barna <em>sine</em>. — They love their (own) children.</td>
+      </tr>
+    </table>
+
+    <div class="compare">
+      <div>
+        <div class="label" style="color: var(--color-pron);">✓ sin = own</div>
+        Han vasker bilen <strong>sin</strong>.<br>
+        <em>He washes his own car.</em>
+      </div>
+      <div>
+        <div class="label" style="color: #888;">✗ hans = someone else's</div>
+        Han vasker bilen <strong>hans</strong>.<br>
+        <em>He washes his (another man's) car.</em>
+      </div>
+    </div>
+
+    <div class="note">
+      ⚠ <strong>seg/sin</strong> is ONLY for 3rd person. For "I/you/we" use meg/deg/oss and min/mi/mitt/mine, din/di/ditt/dine, vår/vårt/våre.<br>
+      Jeg vasker bilen <em>min</em>. (NOT *sin) — I wash my car.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: WAYS TO SAY "THAT"                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="that">
+  <h2>4. Å si "that" — Ways to Say "That"</h2>
+  <div class="content">
+
+    <div class="word-entry">
+      <span class="no">at</span> — <span class="en">that (conjunction)</span>
+      <span class="expl">— connects a verb of thinking/saying/knowing to a clause</span>
+      <div class="ex">Jeg vet <em>at</em> du har rett. — I know <em>that</em> you are right.</div>
+      <div class="ex">Hun sa <em>at</em> hun skulle komme. — She said <em>that</em> she would come.</div>
+      <div class="ex">Jeg tror <em>at</em> det stemmer. — I think <em>that</em> it's correct.</div>
+      <div class="note">💡 "at" can often be dropped in casual speech: "Jeg tror det stemmer."</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">som</span> — <span class="en">that / which / who (relative pronoun)</span>
+      <span class="expl">— introduces a relative clause describing a noun</span>
+      <div class="ex">Mannen <em>som</em> bor her. — The man <em>who</em> lives here.</div>
+      <div class="ex">Boka <em>som</em> jeg leser. — The book <em>that</em> I'm reading.</div>
+      <div class="ex">Huset <em>som</em> ligger ved sjøen. — The house <em>that</em> is by the sea.</div>
+      <div class="note">💡 Norwegian uses "som" for who, which, and that — one word covers all three!</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">det</span> — <span class="en">that (demonstrative / pronoun)</span>
+      <span class="expl">— pointing at something; "that thing"</span>
+      <div class="ex"><em>Det</em> er riktig. — <em>That</em> is correct.</div>
+      <div class="ex">Hva er <em>det</em>? — What is <em>that</em>?</div>
+      <div class="ex">Jeg liker <em>det</em>. — I like <em>that</em>.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">den / det … som</span> — <span class="en">the one that</span>
+      <span class="expl">— picks out a specific item from a group</span>
+      <div class="ex"><em>Den som</em> jobber hardt, lykkes. — The one <em>who</em> works hard succeeds.</div>
+      <div class="ex"><em>Det som</em> skjedde var trist. — <em>What</em> (that which) happened was sad.</div>
+    </div>
+
+    <div class="compare">
+      <div>
+        <div class="label" style="color: var(--color-that);">at → after verbs</div>
+        Jeg <strong>vet</strong> at …<br>
+        Jeg <strong>tror</strong> at …<br>
+        Hun <strong>sa</strong> at …
+      </div>
+      <div>
+        <div class="label" style="color: var(--color-that);">som → after nouns</div>
+        Mannen <strong>som</strong> …<br>
+        Boka <strong>som</strong> …<br>
+        Stedet <strong>som</strong> …
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: "IT" AND DEMONSTRATIVES                         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="it">
+  <h2>5. "It" og Demonstrativer — "It" &amp; Demonstratives</h2>
+
+  <h3>Den / Det / De / Dem — "It" &amp; "They"</h3>
+  <div class="content">
+
+    <div class="word-entry">
+      <span class="no">den</span> — <span class="en">it (for en-words)</span>
+      <div class="ex">Hvor er boka? <em>Den</em> er på bordet. — Where is the book? It's on the table.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">det</span> — <span class="en">it (for et-words); also dummy subject</span>
+      <div class="ex">Huset er fint. <em>Det</em> er stort. — The house is nice. It is big.</div>
+      <div class="ex"><em>Det</em> regner. — It's raining. <span class="expl">(dummy subject — no real "it")</span></div>
+      <div class="ex"><em>Det</em> er mange folk her. — There are many people here. <span class="expl">(existential "det")</span></div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">de</span> — <span class="en">they (subject)</span>
+      <div class="ex"><em>De</em> bor i Oslo. — They live in Oslo.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">dem</span> — <span class="en">them (object)</span>
+      <div class="ex">Jeg ser <em>dem</em>. — I see them.</div>
+    </div>
+
+    <div class="note">
+      💡 <strong>Gender rule:</strong> den → masculine/feminine nouns (bilen, stolen, boka) · det → neuter nouns (huset, bordet, barnet)
+    </div>
+  </div>
+
+  <h3>Denne / Dette / Disse — Demonstratives</h3>
+  <div class="content">
+    <table>
+      <tr>
+        <th></th>
+        <th>en-word</th>
+        <th>et-word</th>
+        <th>Plural</th>
+      </tr>
+      <tr>
+        <td><strong>this / these</strong></td>
+        <td><strong>denne</strong></td>
+        <td><strong>dette</strong></td>
+        <td><strong>disse</strong></td>
+      </tr>
+      <tr>
+        <td><strong>that / those</strong></td>
+        <td><strong>den (der)</strong></td>
+        <td><strong>det (der)</strong></td>
+        <td><strong>de (der)</strong></td>
+      </tr>
+    </table>
+
+    <div class="note">
+      💡 Plain den/det/de can mean "that/those," but to clearly contrast with "this/these," add <strong>der</strong>:<br>
+      <strong>den der</strong> bilen = that car (over there) · <strong>de der</strong> folkene = those people
+    </div>
+
+    <div class="word-entry">
+      <span class="no">denne</span> — <span class="en">this (en-word)</span>
+      <div class="ex"><em>Denne</em> boka er god. — This book is good.</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">dette</span> — <span class="en">this (et-word)</span>
+      <div class="ex"><em>Dette</em> huset er gammelt. — This house is old.</div>
+      <div class="ex">Hva er <em>dette</em>? — What is this?</div>
+    </div>
+    <div class="word-entry">
+      <span class="no">disse</span> — <span class="en">these</span>
+      <div class="ex"><em>Disse</em> bøkene er mine. — These books are mine.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: DA vs. NÅR                                      -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="da">
+  <h2>6. Da vs. Når — When</h2>
+  <div class="content">
+
+    <div class="compare">
+      <div>
+        <div class="label" style="color: var(--color-da);">da = single past event</div>
+        A specific time in the past; happened once.
+      </div>
+      <div>
+        <div class="label" style="color: var(--color-da);">når = repeated / future / question</div>
+        Habitual, future, or asking "when?"
+      </div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">da</span> — <span class="en">when (one-time past); then</span>
+      <div class="ex"><em>Da</em> jeg var barn, bodde vi i Bergen. — When I was a child, we lived in Bergen.</div>
+      <div class="ex"><em>Da</em> hun kom hjem, var det mørkt. — When she came home, it was dark.</div>
+      <div class="ex">Jeg spiste, og <em>da</em> gikk jeg. — I ate, and then I left. <span class="expl">(da = then)</span></div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">når</span> — <span class="en">when (repeated / future); whenever</span>
+      <div class="ex"><em>Når</em> det regner, tar jeg paraply. — Whenever it rains, I take an umbrella.</div>
+      <div class="ex"><em>Når</em> jeg blir stor, vil jeg bli lege. — When I grow up, I want to be a doctor.</div>
+      <div class="ex"><em>Når</em> kommer du? — When are you coming? <span class="expl">(question)</span></div>
+    </div>
+
+    <div class="note">
+      <strong>Quick test:</strong> Can you replace "when" with "whenever"? → Use <strong>når</strong>.<br>
+      Is it a specific past moment? → Use <strong>da</strong>.<br>
+      Asking a question with "when"? → Always <strong>når</strong>.<br>
+      <strong>Huskeregel:</strong> <em>Den gang da, hver gang når.</em> — That time: da. Every time: når.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 7: MULTI-USE WORDS                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="multi">
+  <h2>7. Flerbruksord — Words with Multiple Meanings</h2>
+  <div class="content">
+
+    <div class="word-entry">
+      <span class="no">som</span>
+      <div class="ex">① <strong>that/which/who</strong> (relative): Gutten <em>som</em> leker. — The boy who plays.</div>
+      <div class="ex">② <strong>as, like</strong> (comparison): Hvit <em>som</em> snø. — White as snow.</div>
+      <div class="ex">③ <strong>like</strong> (resemblance): Det ser ut <em>som</em> regn. — It looks like rain.</div>
+      <div class="ex">④ <strong>like</strong> (comparison of people/things): Han er ikke <em>som</em> broren sin. — He is not like his brother.</div>
+      <div class="ex">⑤ <strong>as</strong> (role): Hun jobber <em>som</em> lege. — She works as a doctor.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">om</span>
+      <div class="ex">① <strong>about</strong>: En bok <em>om</em> Norge. — A book about Norway.</div>
+      <div class="ex">② <strong>if</strong> (indirect question): Jeg lurer på <em>om</em> det stemmer. — I wonder if it's true.</div>
+      <div class="ex">③ <strong>in</strong> (future time): <em>Om</em> to timer. — In two hours.</div>
+      <div class="ex">④ <strong>in</strong> (time of day): Vi pleier å gå tur <em>om</em> kvelden. — We usually go for a walk in the evening.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">av</span>
+      <div class="ex">① <strong>of</strong>: En av oss. — One of us.</div>
+      <div class="ex">② <strong>off</strong>: Ta <em>av</em> deg skoene. — Take off your shoes.</div>
+      <div class="ex">③ <strong>of/from</strong> (material): Laget <em>av</em> tre. — Made of wood.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">at</span>
+      <div class="ex">① <strong>that</strong> (conjunction): Jeg vet <em>at</em> du kan. — I know that you can.</div>
+      <div class="ex"><span class="expl">Only one meaning — but appears everywhere! See Section 4.</span></div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">jo</span>
+      <span class="expl">— untranslatable emphasis particle; adds "as you know / obviously / actually"</span>
+      <div class="ex">Du vet <em>jo</em> det. — You know that (obviously / don't you?).</div>
+      <div class="ex">Det er <em>jo</em> sant! — It IS true! (reinforcing)</div>
+      <div class="ex"><em>Jo</em>, det stemmer. — Yes (contradicting a negative). <span class="expl">("jo" = yes to a negative question)</span></div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">vel</span>
+      <div class="ex">① <strong>presumably, I suppose</strong> (particle): Det er <em>vel</em> sant. — That's probably/presumably true.</div>
+      <div class="ex">② <strong>well</strong> (filler): <em>Vel</em>, det er slik det er. — Well, that's how it is.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">nok</span>
+      <div class="ex">① <strong>enough</strong>: Vi har <em>nok</em> mat. — We have enough food.</div>
+      <div class="ex">② <strong>probably</strong> (particle): Det er <em>nok</em> sant. — That's probably true.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">da</span> <span class="expl">(beyond Section 6)</span>
+      <div class="ex">① <strong>when</strong> (past): <em>Da</em> jeg var ung… — When I was young…</div>
+      <div class="ex">② <strong>then</strong>: Hva gjør vi <em>da</em>? — What do we do then?</div>
+      <div class="ex">③ <strong>emphasis</strong>: Kom <em>da</em>! — Come on! / Det var <em>da</em> rart. — That was strange (indeed).</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">jo … jo / dess … dess</span> — <span class="en">the more … the more</span>
+      <div class="ex"><em>Jo</em> mer du øver, <em>jo</em> bedre blir du. — The more you practice, the better you get.</div>
+      <div class="ex"><em>Dess</em> større, <em>dess</em> bedre. — The bigger, the better.</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">noen / noe</span> — <span class="en">some, any, someone, something</span>
+      <div class="ex">Er det <em>noen</em> her? — Is anyone here? <span class="expl">(noen = someone/anyone)</span></div>
+      <div class="ex">Har du <em>noe</em> vann? — Do you have some/any water? <span class="expl">(noe = something/any, uncountable)</span></div>
+      <div class="ex"><em>Noen</em> bøker. — Some books. <span class="expl">(noen + plural = some)</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 8: QUESTION WORDS                                  -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="qw">
+  <h2>8. Spørreord — Question Words</h2>
+
+  <h3>Grunnleggende — Basic Question Words</h3>
+  <div class="content">
+
+    <div class="word-entry">
+      <span class="no">hva</span> — <span class="en">what</span>
+      <div class="ex"><em>Hva</em> heter du? — What is your name?</div>
+      <div class="ex"><em>Hva</em> skjedde? — What happened?</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">hvem</span> — <span class="en">who</span>
+      <div class="ex"><em>Hvem</em> er det? — Who is that?</div>
+      <div class="ex"><em>Hvem</em> snakker du med? — Who are you talking to?</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">hvor</span> — <span class="en">where</span>
+      <div class="ex"><em>Hvor</em> bor du? — Where do you live?</div>
+      <div class="ex"><em>Hvor</em> er toalettet? — Where is the toilet?</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">hvorfor</span> — <span class="en">why</span>
+      <div class="ex"><em>Hvorfor</em> gråter du? — Why are you crying?</div>
+      <div class="ex"><em>Hvorfor</em> ikke? — Why not?</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">når</span> — <span class="en">when (question)</span>
+      <span class="expl">— see also Section 6 for da vs når</span>
+      <div class="ex"><em>Når</em> begynner filmen? — When does the film start?</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">hvilken / hvilket / hvilke</span> — <span class="en">which</span>
+      <span class="expl">— agrees with noun gender: hvilken (en) · hvilket (et) · hvilke (pl)</span>
+      <div class="ex"><em>Hvilken</em> bok liker du best? — Which book do you like best?</div>
+      <div class="ex"><em>Hvilket</em> språk snakker du? — Which language do you speak?</div>
+      <div class="ex"><em>Hvilke</em> farger liker du? — Which colors do you like?</div>
+    </div>
+  </div>
+
+  <h3>Hvordan vs. Hvor — Ways to Say "How"</h3>
+  <div class="content">
+
+    <div class="note">
+      ⚠ Norwegian splits English "how" into two words with different roles.
+    </div>
+
+    <div class="word-entry">
+      <span class="no">hvordan</span> — <span class="en">how (in what way / method)</span>
+      <span class="expl">— asks about manner, process, or method</span>
+      <div class="ex"><em>Hvordan</em> har du det? — How are you?</div>
+      <div class="ex"><em>Hvordan</em> lager du pizza? — How do you make pizza?</div>
+      <div class="ex"><em>Hvordan</em> kom du hit? — How did you get here?</div>
+      <div class="ex"><em>Hvordan</em> fungerer det? — How does it work?</div>
+    </div>
+
+    <div class="word-entry">
+      <span class="no">hvor</span> — <span class="en">how (+ adjective/adverb = degree)</span>
+      <span class="expl">— asks about degree, amount, quantity, distance, speed, etc.</span>
+      <div class="ex"><em>Hvor</em> gammel er du? — How old are you?</div>
+      <div class="ex"><em>Hvor</em> langt er det? — How far is it?</div>
+      <div class="ex"><em>Hvor</em> lenge har du bodd her? — How long have you lived here?</div>
+      <div class="ex"><em>Hvor</em> mye koster det? — How much does it cost?</div>
+      <div class="ex"><em>Hvor</em> mange barn har du? — How many children do you have?</div>
+      <div class="ex"><em>Hvor</em> fort kjørte du? — How fast were you driving?</div>
+    </div>
+
+    <div class="compare">
+      <div>
+        <div class="label" style="color: var(--color-qw);">hvordan = "in what way?"</div>
+        <em>Hvordan</em> lærte du norsk?<br>
+        How did you learn Norwegian?<br>
+        <span class="expl">→ answer describes a method</span>
+      </div>
+      <div>
+        <div class="label" style="color: var(--color-qw);">hvor + adj = "to what degree?"</div>
+        <em>Hvor</em> vanskelig er norsk?<br>
+        How difficult is Norwegian?<br>
+        <span class="expl">→ answer describes a degree</span>
+      </div>
+    </div>
+
+    <div class="note">
+      💡 <strong>Rule of thumb:</strong> If "how" asks about degree, amount, or quantity → <strong>hvor</strong> (hvor mye, hvor mange, hvor langt…).<br>
+      If "how" asks about method or manner → <strong>hvordan</strong>.<br>
+      "Hvor" literally means "where" — think of "where on the scale?" to remember.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 9: ADVERBS                                         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="adv">
+  <h2>9. Adverb — Common Adverbs</h2>
+
+  <h3>Frekvens og tid — Frequency &amp; Time</h3>
+  <div class="content">
+    <table>
+      <tr><td><strong>alltid</strong></td><td>always</td><td><strong>aldri</strong></td><td>never</td></tr>
+      <tr><td><strong>fortsatt</strong></td><td>still</td><td><strong>ennå</strong></td><td>yet, still</td></tr>
+      <tr><td><strong>allerede</strong></td><td>already</td><td><strong>igjen</strong></td><td>again</td></tr>
+      <tr><td><strong>nå</strong></td><td>now</td><td><strong>først</strong></td><td>first</td></tr>
+      <tr><td><strong>nettopp</strong></td><td>just (now)</td><td><strong>sjelden</strong></td><td>rarely</td></tr>
+      <tr><td><strong>nylig</strong></td><td>recently</td><td><strong>deretter</strong></td><td>thereafter</td></tr>
+      <tr><td><strong>ofte</strong></td><td>often</td><td><strong>vanligvis</strong></td><td>usually</td></tr>
+      <tr><td><strong>av og til</strong></td><td>sometimes</td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <h3>Grad — Degree</h3>
+  <div class="content">
+    <table>
+      <tr><td><strong>veldig</strong></td><td>very</td><td><strong>ganske</strong></td><td>quite</td></tr>
+      <tr><td><strong>mye</strong></td><td>a lot, much</td><td><strong>nesten</strong></td><td>almost</td></tr>
+      <tr><td><strong>bare / kun</strong></td><td>only</td><td><strong>akkurat</strong></td><td>exactly</td></tr>
+      <tr><td><strong>omtrent</strong></td><td>approximately</td><td><strong>meget</strong></td><td>very (formal)</td></tr>
+    </table>
+  </div>
+
+  <h3>Måte og holdning — Manner &amp; Attitude</h3>
+  <div class="content">
+    <table>
+      <tr><td><strong>også</strong></td><td>also</td><td><strong>sammen</strong></td><td>together</td></tr>
+      <tr><td><strong>kanskje</strong></td><td>maybe</td><td><strong>gjerne</strong></td><td>gladly, happily</td></tr>
+      <tr><td><strong>selv</strong></td><td>oneself, even</td><td><strong>alene</strong></td><td>alone</td></tr>
+      <tr><td><strong>slik / sånn</strong></td><td>like this/that</td><td><strong>helst</strong></td><td>preferably</td></tr>
+      <tr><td><strong>dessverre</strong></td><td>unfortunately</td><td><strong>heller</strong></td><td>rather</td></tr>
+    </table>
+  </div>
+
+  <h3>Logikk — Connectors</h3>
+  <div class="content">
+    <table>
+      <tr><td><strong>derfor</strong></td><td>therefore</td><td><strong>likevel</strong></td><td>nevertheless</td></tr>
+      <tr><td><strong>ellers</strong></td><td>otherwise</td><td><strong>dessuten</strong></td><td>furthermore</td></tr>
+      <tr><td><strong>altså</strong></td><td>so, thus</td><td><strong>derimot</strong></td><td>however, on the other hand</td></tr>
+      <tr><td><strong>nemlig</strong></td><td>namely, you see</td><td><strong>dermed</strong></td><td>thus, thereby</td></tr>
+      <tr><td><strong>imidlertid</strong></td><td>however (formal)</td><td><strong>like</strong></td><td>equal(ly), the same; as in like … som</td></tr>
+    </table>
+  </div>
+</section>
+
+</div><!-- end columns -->
+
+</body>
+</html>
