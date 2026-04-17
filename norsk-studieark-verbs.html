@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norsk Studieark — Verb Reference</title>
+  <style>
+    :root {
+      --color-essential: #1d4ed8;
+      --color-modal: #7e22ce;
+      --color-phrasal: #0f766e;
+      --color-participle: #c2410c;
+      --color-construct: #be185d;
+      --color-verb1: #15803d;
+      --color-verb2: #b91c1c;
+      --color-verb3: #0891b2;
+      --color-verb4: #a16207;
+      --color-verb5: #4338ca;
+      --color-verb6: #dc2626;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 7pt;
+      line-height: 1.2;
+      color: #1a1a1a;
+      padding: 3mm;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 10pt;
+      margin-bottom: 1px;
+      letter-spacing: 0.2px;
+    }
+    h1 small { font-size: 7pt; font-weight: normal; color: #555; }
+
+    .columns {
+      column-count: 4;
+      column-gap: 6px;
+      column-rule: 1px solid #ccc;
+    }
+
+    section {
+      margin-bottom: 3px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+
+    section h2 {
+      font-size: 7pt;
+      color: #fff;
+      padding: 1px 4px;
+      margin: 0;
+      letter-spacing: 0.2px;
+      break-after: avoid;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    section h3 {
+      font-size: 6.5pt;
+      padding: 1px 4px;
+      margin: 0;
+      border-bottom: 1px solid #eee;
+      break-after: avoid;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    section.essential h2 { background: var(--color-essential); }
+    section.essential h3 { color: var(--color-essential); background: #eff6ff; }
+    section.modal h2 { background: var(--color-modal); }
+    section.modal h3 { color: var(--color-modal); background: #faf5ff; }
+    section.phrasal h2 { background: var(--color-phrasal); }
+    section.phrasal h3 { color: var(--color-phrasal); background: #f0fdfa; }
+    section.participle h2 { background: var(--color-participle); }
+    section.participle h3 { color: var(--color-participle); background: #fff7ed; }
+    section.construct h2 { background: var(--color-construct); }
+    section.construct h3 { color: var(--color-construct); background: #fdf2f8; }
+    section.verb1 h2 { background: var(--color-verb1); }
+    section.verb1 h3 { color: var(--color-verb1); background: #f0fdf4; }
+    section.verb2 h2 { background: var(--color-verb2); }
+    section.verb2 h3 { color: var(--color-verb2); background: #fef2f2; }
+    section.verb3 h2 { background: var(--color-verb3); }
+    section.verb3 h3 { color: var(--color-verb3); background: #ecfeff; }
+    section.verb4 h2 { background: var(--color-verb4); }
+    section.verb4 h3 { color: var(--color-verb4); background: #fffbeb; }
+    section.verb5 h2 { background: var(--color-verb5); }
+    section.verb5 h3 { color: var(--color-verb5); background: #eef2ff; }
+    section.verb6 h2 { background: var(--color-verb6); }
+    section.verb6 h3 { color: var(--color-verb6); background: #fef2f2; }
+
+    .content { padding: 1px 3px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1px 0;
+      font-size: 6pt;
+      break-inside: avoid;
+    }
+    th, td {
+      padding: 0.5px 2px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      font-weight: 600;
+      background: #f8f8f8;
+      font-size: 5.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      color: #555;
+    }
+
+    .word-entry {
+      margin: 0;
+      padding: 0.5px 0;
+      border-bottom: 1px dotted #e5e5e5;
+      break-inside: avoid;
+      font-size: 6pt;
+      line-height: 1.15;
+    }
+    .word-entry:last-child { border-bottom: none; }
+
+    .no { font-weight: 700; color: #1a1a1a; }
+    .en { color: #555; font-style: italic; }
+
+    .note {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 2px;
+      padding: 1px 3px;
+      margin: 1px 0;
+      font-size: 5.5pt;
+      color: #92400e;
+      break-inside: avoid;
+    }
+
+    .modal-group {
+      margin: 1px 0;
+      break-inside: avoid;
+    }
+    .modal-group .label {
+      font-weight: 700;
+      font-size: 6pt;
+      color: var(--color-modal);
+      padding: 1px 0;
+      border-bottom: 1px solid #e9d5ff;
+    }
+
+    @media print {
+      body { padding: 3mm; }
+      @page { margin: 4mm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Norsk Studieark <small>— Verb Reference</small></h1>
+
+<div class="columns">
+
+<!-- ═══ SECTION 1: ESSENTIAL IRREGULAR VERBS ═══ -->
+<section class="essential">
+  <h2>1. Viktige uregelmessige verb — Essential Irregular Verbs</h2>
+  <div class="content">
+    <table>
+      <tr>
+        <th>Infinitiv</th>
+        <th>Former</th>
+        <th>English</th>
+      </tr>
+      <tr><td><strong>å være</strong></td><td>er, var, vært</td><td><em>to be</em></td></tr>
+      <tr><td><strong>å ha</strong></td><td>hadde, hatt</td><td><em>to have</em></td></tr>
+      <tr><td><strong>å bli</strong></td><td>ble, blitt</td><td><em>to become / to stay</em></td></tr>
+      <tr><td><strong>å gjøre</strong></td><td>gjør, gjorde, gjort</td><td><em>to do</em></td></tr>
+      <tr><td><strong>å ta</strong></td><td>tok, tatt</td><td><em>to take</em></td></tr>
+      <tr><td><strong>å stå</strong></td><td>sto / stod, stått</td><td><em>to stand</em></td></tr>
+      <tr><td><strong>å komme</strong></td><td>kom, kommet</td><td><em>to come / to arrive</em></td></tr>
+      <tr><td><strong>å ligge</strong></td><td>lå, ligget</td><td><em>to be lying</em></td></tr>
+      <tr><td><strong>å gå</strong></td><td>gikk, gått</td><td><em>to go / to walk</em></td></tr>
+      <tr><td><strong>å legge</strong></td><td>la, lagt</td><td><em>to lay / to put (horizontal)</em></td></tr>
+      <tr><td><strong>å sette</strong></td><td>satte, satt</td><td><em>to set / to put (vertical)</em></td></tr>
+      <tr><td><strong>å sitte</strong></td><td>satt, sittet</td><td><em>to be sitting</em></td></tr>
+      <tr><td><strong>å gi</strong></td><td>ga / gav, gitt</td><td><em>to give</em></td></tr>
+      <tr><td><strong>å få</strong></td><td>fikk, fått</td><td><em>to get / to obtain</em></td></tr>
+      <tr><td><strong>å slå</strong></td><td>slo, slått</td><td><em>to hit / to beat</em></td></tr>
+      <tr><td><strong>å holde</strong></td><td>holdt, holdt</td><td><em>to hold / to keep</em></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2: MODAL VERBS ═══ -->
+<section class="modal">
+  <h2>2. Modale verb — Modal Verbs</h2>
+  <div class="content">
+    <div class="modal-group">
+      <div class="label">å burde — should, ought to</div>
+      <div class="word-entry"><span class="no">bør</span> — <span class="en">should, ought to</span></div>
+      <div class="word-entry"><span class="no">burde</span> — <span class="en">should, ought to (past)</span></div>
+      <div class="word-entry"><span class="no">burde ha</span> — <span class="en">should have</span></div>
+      <div class="word-entry"><span class="no">ha burdet</span> — <span class="en">should have (perfect)</span></div>
+    </div>
+    <div class="modal-group">
+      <div class="label">å måtte — must, have to</div>
+      <div class="word-entry"><span class="no">må</span> — <span class="en">must, have to</span></div>
+      <div class="word-entry"><span class="no">måtte</span> — <span class="en">had to, needed to</span></div>
+      <div class="word-entry"><span class="no">måtte ha</span> — <span class="en">had to have</span></div>
+      <div class="word-entry"><span class="no">ha måttet</span> — <span class="en">have had to</span></div>
+    </div>
+    <div class="modal-group">
+      <div class="label">å ville — to want to</div>
+      <div class="word-entry"><span class="no">vil</span> — <span class="en">want to</span></div>
+      <div class="word-entry"><span class="no">vil ha</span> — <span class="en">will have</span></div>
+      <div class="word-entry"><span class="no">ville</span> — <span class="en">wanted to / would</span></div>
+      <div class="word-entry"><span class="no">ville ha</span> — <span class="en">would have</span></div>
+      <div class="word-entry"><span class="no">ha villet</span> — <span class="en">have wanted to</span></div>
+    </div>
+    <div class="modal-group">
+      <div class="label">å skulle — shall</div>
+      <div class="word-entry"><span class="no">skal</span> — <span class="en">shall / will</span></div>
+      <div class="word-entry"><span class="no">skal ha</span> — <span class="en">shall have / will have</span></div>
+      <div class="word-entry"><span class="no">skulle</span> — <span class="en">was supposed to / would</span></div>
+      <div class="word-entry"><span class="no">skulle ha</span> — <span class="en">would have</span></div>
+      <div class="word-entry"><span class="no">ha skullet</span> — <span class="en">were supposed to have</span></div>
+    </div>
+    <div class="modal-group">
+      <div class="label">å kunne — can, to be able to</div>
+      <div class="word-entry"><span class="no">kan</span> — <span class="en">can, is able to</span></div>
+      <div class="word-entry"><span class="no">kunne</span> — <span class="en">could, was able to</span></div>
+      <div class="word-entry"><span class="no">kunne ha</span> — <span class="en">could have</span></div>
+      <div class="word-entry"><span class="no">ha kunnet</span> — <span class="en">have been able to</span></div>
+    </div>
+    <div class="modal-group">
+      <div class="label">å få — may (permission)</div>
+      <div class="word-entry"><span class="no">får</span> — <span class="en">may</span></div>
+      <div class="word-entry"><span class="no">fikk</span> — <span class="en">got to, were allowed to</span></div>
+      <div class="word-entry"><span class="no">ha fått</span> — <span class="en">have been allowed to</span></div>
+    </div>
+    <h3>Relaterte uttrykk — Related Expressions</h3>
+    <div class="word-entry"><span class="no">å være nødt til</span> — <span class="en">to have to, to be obliged to</span></div>
+    <div class="word-entry"><span class="no">å ha lyst til [å verb]</span> — <span class="en">to want [to verb]</span></div>
+    <div class="word-entry"><span class="no">å ha lyst på en [noun]</span> — <span class="en">to want a [noun]</span></div>
+    <div class="word-entry"><span class="no">å komme til å</span> — <span class="en">to be going to</span></div>
+    <div class="word-entry"><span class="no">å være i stand til</span> — <span class="en">to be able to</span></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3: PHRASAL VERBS ═══ -->
+<section class="phrasal">
+  <h2>3. Frasale verb — Phrasal Verbs</h2>
+  <div class="content">
+    <div class="word-entry"><span class="no">å være glad i</span> — <span class="en">to love (it's less intense than å elske), to care for</span></div>
+    <div class="word-entry"><span class="no">å legge seg</span> — <span class="en">to go to bed</span></div>
+    <div class="word-entry"><span class="no">å stå opp</span> — <span class="en">to get up (from bed)</span></div>
+    <div class="word-entry"><span class="no">å ta av seg</span> — <span class="en">to take off something one is wearing</span></div>
+    <div class="word-entry"><span class="no">å ta på seg</span> — <span class="en">to put something on</span></div>
+    <div class="word-entry"><span class="no">å reise seg (2)</span> — <span class="en">to stand up (to move from lying, sitting, kneeling, etc)</span></div>
+    <div class="word-entry"><span class="no">å ta med</span> — <span class="en">to bring (to have sth or sb with you when you come)</span></div>
+    <div class="word-entry"><span class="no">å ta på</span> — <span class="en">to touch (a bit more informal than å berøre)</span></div>
+    <div class="word-entry"><span class="no">å legge igjen [noun]</span> — <span class="en">to leave (to forget to bring something with you)</span></div>
+    <div class="word-entry"><span class="no">å legge [noun] fra seg</span> — <span class="en">to leave (to put sth in a place and go away from it)</span></div>
+    <div class="word-entry"><span class="no">å legge bort</span> — <span class="en">to put away</span></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4: CONSTRUCTIONS ═══ -->
+<section class="construct">
+  <h2>4. Konstruksjoner — Verb Constructions</h2>
+  <div class="content">
+    <div class="word-entry"><span class="no">[verb] for å [verb]</span> — <span class="en">[verb] to [verb] (causality)</span></div>
+    <div class="word-entry"><span class="no">til å</span> — <span class="en">(used before infinitive after adjectives)</span></div>
+    <div class="word-entry"><span class="no">uten at [subj] [verb]</span> — <span class="en">without [subj] [verb-ing]</span></div>
+    <div class="note">ℹ️ These constructions give an idea of <strong>continuity</strong> (being in the middle of doing something):</div>
+    <div class="word-entry"><span class="no">å holde på</span> — <span class="en">to be in the middle of (doing)</span></div>
+    <div class="word-entry"><span class="no">å ligge og</span> — <span class="en">to be lying and (doing)</span></div>
+    <div class="word-entry"><span class="no">å sitte og</span> — <span class="en">to be sitting and (doing)</span></div>
+    <div class="word-entry"><span class="no">å stå og</span> — <span class="en">to be standing and (doing)</span></div>
+    <div class="word-entry"><span class="no">å drive og</span> — <span class="en">to keep on (doing)</span></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5: PRESENT PARTICIPLES ═══ -->
+<section class="participle">
+  <h2>5. Presens partisipp — Present Participles</h2>
+  <div class="content">
+    <div class="word-entry"><span class="no">levende</span> — <span class="en">living, alive</span></div>
+    <div class="word-entry"><span class="no">sittende</span> — <span class="en">seated, sitting</span></div>
+    <div class="word-entry"><span class="no">liggende</span> — <span class="en">lying (position)</span></div>
+    <div class="word-entry"><span class="no">forvirrende</span> — <span class="en">confusing</span></div>
+    <div class="word-entry"><span class="no">svømmende</span> — <span class="en">swimming</span></div>
+    <div class="word-entry"><span class="no">overraskende</span> — <span class="en">surprising, surprisingly</span></div>
+    <div class="word-entry"><span class="no">døende</span> — <span class="en">dying</span></div>
+    <div class="word-entry"><span class="no">løpende</span> — <span class="en">running, ongoing</span></div>
+    <div class="word-entry"><span class="no">sovende</span> — <span class="en">sleeping</span></div>
+    <div class="word-entry"><span class="no">nåværende</span> — <span class="en">current</span></div>
+    <div class="word-entry"><span class="no">kommende</span> — <span class="en">coming</span></div>
+    <div class="word-entry"><span class="no">underholdende</span> — <span class="en">entertaining</span></div>
+    <div class="word-entry"><span class="no">flytende</span> — <span class="en">fluent, fluently / fluid</span></div>
+    <div class="word-entry"><span class="no">lignende</span> — <span class="en">similar</span></div>
+    <div class="word-entry"><span class="no">snakkende</span> — <span class="en">talking</span></div>
+    <div class="word-entry"><span class="no">avgjørende</span> — <span class="en">decisive, critical, crucial</span></div>
+    <div class="word-entry"><span class="no">gjenværende</span> — <span class="en">remaining</span></div>
+    <div class="word-entry"><span class="no">imponerende</span> — <span class="en">impressive</span></div>
+    <div class="word-entry"><span class="no">givende</span> — <span class="en">rewarding</span></div>
+    <div class="word-entry"><span class="no">passende</span> — <span class="en">appropriate, suitable</span></div>
+    <div class="word-entry"><span class="no">spennende</span> — <span class="en">exciting</span></div>
+    <div class="word-entry"><span class="no">utelukkende</span> — <span class="en">exclusively, only (a PP mostly used as an adverb)</span></div>
+    <div class="word-entry"><span class="no">deprimerende</span> — <span class="en">depressing</span></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6: COMMON VERBS A ═══ -->
+<section class="verb1">
+  <h2>6. Vanlige verb A — Common Verbs A</h2>
+  <div class="content">
+    <div class="word-entry"><span class="no">å vite (vet / veit, visste, visst)</span> — <span class="en">to know (knew, known)</span></div>
+    <div class="word-entry"><span class="no">å hete (het / hette, hett)</span> — <span class="en">to be called</span></div>
+    <div class="word-entry"><span class="no">å bo</span> — <span class="en">to live (reside)</span></div>
+    <div class="word-entry"><span class="no">å snakke</span> — <span class="en">to speak (spoke, spoken)</span></div>
+    <div class="word-entry"><span class="no">å spise</span> — <span class="en">to eat (ate, eaten)</span></div>
+    <div class="word-entry"><span class="no">å drikke (drakk, drukket)</span> — <span class="en">to drink (drank, drunk)</span></div>
+    <div class="word-entry"><span class="no">å lese</span> — <span class="en">to read (read, read)</span></div>
+    <div class="word-entry"><span class="no">å se (så, sett)</span> — <span class="en">to see (saw, seen)</span></div>
+    <div class="word-entry"><span class="no">å se på</span> — <span class="en">to look at / to watch</span></div>
+    <div class="word-entry"><span class="no">å se opp for</span> — <span class="en">to watch out / to look out for (see also å passe på for)</span></div>
+    <div class="word-entry"><span class="no">å se ut</span> — <span class="en">to look (appearance)</span></div>
+    <div class="word-entry"><span class="no">å like</span> — <span class="en">to like</span></div>
+    <div class="word-entry"><span class="no">å kjøpe</span> — <span class="en">to buy (bought, bought) / to shop</span></div>
+    <div class="word-entry"><span class="no">å elske</span> — <span class="en">to love</span></div>
+    <div class="word-entry"><span class="no">å trenge (2)</span> — <span class="en">to need</span></div>
+    <div class="word-entry"><span class="no">å lage (1)</span> — <span class="en">to make (made, made)</span></div>
+    <div class="word-entry"><span class="no">å vise</span> — <span class="en">to show</span></div>
+    <div class="word-entry"><span class="no">å høre</span> — <span class="en">to hear (heard, heard)</span></div>
+    <div class="word-entry"><span class="no">å skrive (skrev, skrevet)</span> — <span class="en">to write (wrote, written) / to type</span></div>
+    <div class="word-entry"><span class="no">å arbeide (1)</span> — <span class="en">to work</span></div>
+    <div class="word-entry"><span class="no">å leke</span> — <span class="en">to play (like kids play, using the imagination, and so on)</span></div>
+    <div class="word-entry"><span class="no">å sove (sov, sovet)</span> — <span class="en">to sleep (slept, slept)</span></div>
+    <div class="word-entry"><span class="no">å vaske</span> — <span class="en">to wash</span></div>
+    <div class="word-entry"><span class="no">å lære</span> — <span class="en">to learn (learnt, learnt) / to teach (taught, taught)</span></div>
+    <div class="word-entry"><span class="no">å kjøre</span> — <span class="en">to drive (drove, driven)</span></div>
+    <div class="word-entry"><span class="no">å selge (solgte, solgt)</span> — <span class="en">to sell (sold, sold)</span></div>
+    <div class="word-entry"><span class="no">å vente på</span> — <span class="en">to wait for</span></div>
+    <div class="word-entry"><span class="no">å velge (valgte, valgt)</span> — <span class="en">to choose (chose, chosen)</span></div>
+    <div class="word-entry"><span class="no">å bestille (2)</span> — <span class="en">to order, to book, to reserve</span></div>
+    <div class="word-entry"><span class="no">å nå</span> — <span class="en">to reach</span></div>
+    <div class="word-entry"><span class="no">å si (sier, sa, sagt)</span> — <span class="en">to say (said, said)</span></div>
+    <div class="word-entry"><span class="no">å bety (betød)</span> — <span class="en">to mean (meant, meant) (to signify)</span></div>
+    <div class="word-entry"><span class="no">å lytte til</span> — <span class="en">to listen to</span></div>
+    <div class="word-entry"><span class="no">å tro på</span> — <span class="en">to believe in</span></div>
+    <div class="word-entry"><span class="no">å kalle (2)</span> — <span class="en">to call (all meanings, but when calling on a phone, å ringe is used)</span></div>
+    <div class="word-entry"><span class="no">å ringe (2)</span> — <span class="en">to call (contact using a phone)</span></div>
+    <div class="word-entry"><span class="no">å eie (åtte, ått) (1a)</span> — <span class="en">to own</span></div>
+    <div class="word-entry"><span class="no">å tilhøre or å høre til</span> — <span class="en">to belong to</span></div>
+    <div class="word-entry"><span class="no">å bruke</span> — <span class="en">to use / to spend (spent, spent)</span></div>
+    <div class="word-entry"><span class="no">å smake</span> — <span class="en">to taste (transitive and intransitive)</span></div>
+    <div class="word-entry"><span class="no">å betale</span> — <span class="en">to pay (paid, paid)</span></div>
+    <div class="word-entry"><span class="no">å servere</span> — <span class="en">to serve (a food or a drink)</span></div>
+    <div class="word-entry"><span class="no">å dra (dro, dratt)</span> — <span class="en">to go (places around town), to leave (left, left) (a place one is in)</span></div>
+    <div class="word-entry"><span class="no">å dra</span> — <span class="en">to drag</span></div>
+    <div class="word-entry"><span class="no">å svømme (2)</span> — <span class="en">to swim (swam, swum)</span></div>
+    <div class="word-entry"><span class="no">å hoppe</span> — <span class="en">to jump, to leap (leapt, leapt), to hop</span></div>
+    <div class="word-entry"><span class="no">å fly     (fløy, fløyet / flydd)</span> — <span class="en">to fly (flew, flown)</span></div>
+    <div class="word-entry"><span class="no">å løpe (løp, løpt / løpet)</span> — <span class="en">to run (ran, run)</span></div>
+    <div class="word-entry"><span class="no">å leve</span> — <span class="en">to live (be alive)</span></div>
+    <div class="word-entry"><span class="no">å henge (hang, hengt)</span> — <span class="en">to hang (hung, hung) (to be suspended)</span></div>
+    <div class="word-entry"><span class="no">å henge (hengte, hengt)</span> — <span class="en">to hang (hung, hung) (to suspend)</span></div>
+    <div class="word-entry"><span class="no">å lete etter</span> — <span class="en">to look for</span></div>
+    <div class="word-entry"><span class="no">å koste</span> — <span class="en">to cost</span></div>
+    <div class="word-entry"><span class="no">å spille (2)</span> — <span class="en">to play (all the other meanings, compare with å leke)</span></div>
+    <div class="word-entry"><span class="no">å vinne (vant, vunnet)</span> — <span class="en">to win (won, won)</span></div>
+    <div class="word-entry"><span class="no">å tape</span> — <span class="en">to lose (lost, lost) (to not win a competition)</span></div>
+    <div class="word-entry"><span class="no">å synge (sang, sunget)</span> — <span class="en">to sing (sang, sung)</span></div>
+    <div class="word-entry"><span class="no">å tegne</span> — <span class="en">to draw (drew, drawn)</span></div>
+    <div class="word-entry"><span class="no">å hvile</span> — <span class="en">to rest</span></div>
+    <div class="word-entry"><span class="no">å finne (fant, funnet)</span> — <span class="en">to find (found, found)</span></div>
+    <div class="word-entry"><span class="no">å kysse (2)</span> — <span class="en">to kiss</span></div>
+    <div class="word-entry"><span class="no">å leie</span> — <span class="en">to rent</span></div>
+    <div class="word-entry"><span class="no">å leie</span> — <span class="en">to hold hands with someone</span></div>
+    <div class="word-entry"><span class="no">å åpne</span> — <span class="en">to open</span></div>
+    <div class="word-entry"><span class="no">å regne (2)</span> — <span class="en">to rain</span></div>
+    <div class="word-entry"><span class="no">å beklage (1)</span> — <span class="en">to apologise</span></div>
+    <div class="word-entry"><span class="no">å dø (døde, dødd)</span> — <span class="en">to die</span></div>
+    <div class="word-entry"><span class="no">å lukte</span> — <span class="en">to smell (transitive and intransitive)</span></div>
+    <div class="word-entry"><span class="no">å takke</span> — <span class="en">to thank</span></div>
+    <div class="word-entry"><span class="no">å huske</span> — <span class="en">to remember</span></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 7: COMMON VERBS B ═══ -->
+<section class="verb2">
+  <h2>7. Vanlige verb B — Common Verbs B</h2>
+  <div class="content">
+    <div class="word-entry"><span class="no">å le (lo, ledd)</span> — <span class="en">to laugh</span></div>
+    <div class="word-entry"><span class="no">å smile</span> — <span class="en">to smile</span></div>
+    <div class="word-entry"><span class="no">å savne</span> — <span class="en">to miss (to feel the absence of)</span></div>
+    <div class="word-entry"><span class="no">å føle (seg)</span> — <span class="en">to feel (felt, felt)</span></div>
+    <div class="word-entry"><span class="no">å gråte (gråt, grått)</span> — <span class="en">to cry</span></div>
+    <div class="word-entry"><span class="no">å hate (1)</span> — <span class="en">to hate</span></div>
+    <div class="word-entry"><span class="no">å danse</span> — <span class="en">to dance</span></div>
+    <div class="word-entry"><span class="no">å prøve</span> — <span class="en">to try</span></div>
+    <div class="word-entry"><span class="no">å fortsette</span> — <span class="en">to continue</span></div>
+    <div class="word-entry"><span class="no">å studere</span> — <span class="en">to study</span></div>
+    <div class="word-entry"><span class="no">å møte</span> — <span class="en">to meet (met, met)</span></div>
+    <div class="word-entry"><span class="no">å jobbe</span> — <span class="en">to work (synonym with å arbeide)</span></div>
+    <div class="word-entry"><span class="no">å klemme (2)</span> — <span class="en">to hug</span></div>
+    <div class="word-entry"><span class="no">å redde</span> — <span class="en">to rescue, to save</span></div>
+    <div class="word-entry"><span class="no">å virke som</span> — <span class="en">to seem like</span></div>
+    <div class="word-entry"><span class="no">å tenke på (2)</span> — <span class="en">to think about, of (thought, thought)</span></div>
+    <div class="word-entry"><span class="no">å hjelpe (hjalp, hjulpet)</span> — <span class="en">to help</span></div>
+    <div class="word-entry"><span class="no">å støtte</span> — <span class="en">to support</span></div>
+    <div class="word-entry"><span class="no">å bli enig med</span> — <span class="en">to agree with (disagree is 'bli uenig')</span></div>
+    <div class="word-entry"><span class="no">å kjenne (2)</span> — <span class="en">to know (a person or a place)</span></div>
+    <div class="word-entry"><span class="no">å dele</span> — <span class="en">to share / to divide (something into smaller parts)</span></div>
+    <div class="word-entry"><span class="no">å svare</span> — <span class="en">to answer (på is added before et spørsmål or spørsmålet)</span></div>
+    <div class="word-entry"><span class="no">å forstå</span> — <span class="en">to understand</span></div>
+    <div class="word-entry"><span class="no">å spørre om (spør, spurte, spurt)</span> — <span class="en">to ask about</span></div>
+    <div class="word-entry"><span class="no">å ha rett</span> — <span class="en">to be right, to be correct</span></div>
+    <div class="word-entry"><span class="no">å ta feil</span> — <span class="en">to be wrong, to be incorrect</span></div>
+    <div class="word-entry"><span class="no">å stille (2)</span> — <span class="en">(this word is like 'to set', it has many meanings, many shared)</span></div>
+    <div class="word-entry"><span class="no">å stille et spørsmål (2)</span> — <span class="en">to ask a question (å stille is used instead of å spørre before et spørsmål or spørsmålet, to avoid redundancy)</span></div>
+    <div class="word-entry"><span class="no">å finnes (finnes/fins, fantes/fans, funnes)</span> — <span class="en">to exist (synonym with 'det er' if preceded by 'det')</span></div>
+    <div class="word-entry"><span class="no">å skje</span> — <span class="en">to happen</span></div>
+    <div class="word-entry"><span class="no">å forsøke</span> — <span class="en">to attempt</span></div>
+    <div class="word-entry"><span class="no">å ønske (seg)(2)</span> — <span class="en">to wish (for)</span></div>
+    <div class="word-entry"><span class="no">å stole på</span> — <span class="en">to trust</span></div>
+    <div class="word-entry"><span class="no">å følge (fulgte, fulgt)</span> — <span class="en">to follow</span></div>
+    <div class="word-entry"><span class="no">å begynne (2)</span> — <span class="en">to begin (began, begun)</span></div>
+    <div class="word-entry"><span class="no">å slutte</span> — <span class="en">to stop (to stop doing a verb)</span></div>
+    <div class="word-entry"><span class="no">å kle på (seg)</span> — <span class="en">to dress (up) (transitive and intransitive)</span></div>
+    <div class="word-entry"><span class="no">å fryse (frøs, frosset)</span> — <span class="en">to be cold (to be freezing), to freeze (froze, frozen)</span></div>
+    <div class="word-entry"><span class="no">å bære (bar, båret)</span> — <span class="en">to carry, to bear (bore, borne or born)</span></div>
+    <div class="word-entry"><span class="no">å mene</span> — <span class="en">to mean (meant, meant) (to intend something in a particular way)</span></div>
+    <div class="word-entry"><span class="no">å love (1)(2)</span> — <span class="en">to promise</span></div>
+    <div class="word-entry"><span class="no">å stemme (2)</span> — <span class="en">to be correct / to vote</span></div>
+    <div class="word-entry"><span class="no">å foretrekke (foretrakk, foretrukket)</span> — <span class="en">to prefer</span></div>
+    <div class="word-entry"><span class="no">å bekymre seg om</span> — <span class="en">to worry about</span></div>
+    <div class="word-entry"><span class="no">å passe</span> — <span class="en">to fit (fit, fit)</span></div>
+    <div class="word-entry"><span class="no">å passe</span> — <span class="en">to suit, to work for, to be right for</span></div>
+    <div class="word-entry"><span class="no">å passe på</span> — <span class="en">to look after, to take care of</span></div>
+    <div class="word-entry"><span class="no">å passe på at</span> — <span class="en">to make sure that</span></div>
+    <div class="word-entry"><span class="no">å passe på for</span> — <span class="en">to look out for, to watch out for (it isn't used as an exclamation, that is 'se opp!')</span></div>
+    <div class="word-entry"><span class="no">å pleie</span> — <span class="en">to have the custom to, to tend to ('used to', when in the past)</span></div>
+    <div class="word-entry"><span class="no">å miste</span> — <span class="en">to lose (to not have something anymore)</span></div>
+    <div class="word-entry"><span class="no">å endre</span> — <span class="en">to change (to become or make different)</span></div>
+    <div class="word-entry"><span class="no">å bomme på</span> — <span class="en">to miss (to not hit, catch, etc)</span></div>
+    <div class="word-entry"><span class="no">å bestemme (2)</span> — <span class="en">to determine</span></div>
+    <div class="word-entry"><span class="no">å bestemme seg (2)</span> — <span class="en">to decide</span></div>
+    <div class="word-entry"><span class="no">å stenge (2)</span> — <span class="en">to shut (shut, shut) / to close a store temporarily (such as for the night)</span></div>
+    <div class="word-entry"><span class="no">å slappe av</span> — <span class="en">to relax</span></div>
+    <div class="word-entry"><span class="no">å bite (bet, bitt)</span> — <span class="en">to bite (bit, bitten)</span></div>
+    <div class="word-entry"><span class="no">å lukke</span> — <span class="en">to close</span></div>
+    <div class="word-entry"><span class="no">å forlate (forlot, forlatt)</span> — <span class="en">to abandon (to leave someone or a place)</span></div>
+    <div class="word-entry"><span class="no">å avbryte (avbrøt, avbrutt)</span> — <span class="en">to interrupt / to cancel (often seen on computers and phones)</span></div>
+    <div class="word-entry"><span class="no">å sende (2)</span> — <span class="en">to send (sent, sent) / to pass (something) / to ship</span></div>
+    <div class="word-entry"><span class="no">å fylle (2)</span> — <span class="en">to fill</span></div>
+    <div class="word-entry"><span class="no">å stryke (strøk, strøket)</span> — <span class="en">to iron</span></div>
+    <div class="word-entry"><span class="no">å låse</span> — <span class="en">to lock</span></div>
+    <div class="word-entry"><span class="no">å låse opp</span> — <span class="en">to unlock</span></div>
+    <div class="word-entry"><span class="no">å støvsuge (1)</span> — <span class="en">to vacuum clean</span></div>
+    <div class="word-entry"><span class="no">å rydde</span> — <span class="en">to tidy up</span></div>
+    <div class="word-entry"><span class="no">å drømme (2)</span> — <span class="en">to dream (dreamt, dreamt)</span></div>
+    <div class="word-entry"><span class="no">å snorke</span> — <span class="en">to snore</span></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 8: COMMON VERBS C ═══ -->
+<section class="verb3">
+  <h2>8. Vanlige verb C — Common Verbs C</h2>
+  <div class="content">
+    <div class="word-entry"><span class="no">å føne (1)</span> — <span class="en">to blow-dry (hair) (blew-dried, blown-dried)</span></div>
+    <div class="word-entry"><span class="no">å børste</span> — <span class="en">to brush</span></div>
+    <div class="word-entry"><span class="no">å pusse</span> — <span class="en">to brush</span></div>
+    <div class="word-entry"><span class="no">å dusje</span> — <span class="en">to shower, to take a shower</span></div>
+    <div class="word-entry"><span class="no">å barbere</span> — <span class="en">to shave</span></div>
+    <div class="word-entry"><span class="no">å bade (1)</span> — <span class="en">to bathe</span></div>
+    <div class="word-entry"><span class="no">å tørke</span> — <span class="en">to dry / to wipe</span></div>
+    <div class="word-entry"><span class="no">å mate (1)</span> — <span class="en">to feed (fed, fed)</span></div>
+    <div class="word-entry"><span class="no">å dyrke</span> — <span class="en">to grow a plant or a crop, to cultivate</span></div>
+    <div class="word-entry"><span class="no">å klare</span> — <span class="en">to manage, to be able to do, can do</span></div>
+    <div class="word-entry"><span class="no">å inneholde</span> — <span class="en">to contain</span></div>
+    <div class="word-entry"><span class="no">å be (ba, bedt)</span> — <span class="en">to pray</span></div>
+    <div class="word-entry"><span class="no">å be om</span> — <span class="en">to ask for (this is the 'to ask' used when asking for something)</span></div>
+    <div class="word-entry"><span class="no">å be [someone] på [something]</span> — <span class="en">to invite [someone] for [something]</span></div>
+    <div class="word-entry"><span class="no">å stanse</span> — <span class="en">to stop (å slutte's meaning + to not move any farther, and to prevent)</span></div>
+    <div class="word-entry"><span class="no">å knuse</span> — <span class="en">to smash / to crush / to shatter</span></div>
+    <div class="word-entry"><span class="no">å blande</span> — <span class="en">to blend, to mix</span></div>
+    <div class="word-entry"><span class="no">å glemme (2)</span> — <span class="en">to forget</span></div>
+    <div class="word-entry"><span class="no">å håpe (1)</span> — <span class="en">to hope</span></div>
+    <div class="word-entry"><span class="no">å gjelde (for) (gjaldt, gjeldt)</span> — <span class="en">to pertain, to apply to, to concern, to regard (related to to yield)</span></div>
+    <div class="word-entry"><span class="no">å skjære (skar, skåret)</span> — <span class="en">to cut (cut, cut)</span></div>
+    <div class="word-entry"><span class="no">å tilbringe (tilbrakte, tilbrakt)</span> — <span class="en">to spend (time)</span></div>
+    <div class="word-entry"><span class="no">å orke</span> — <span class="en">to have the energy</span></div>
+    <div class="word-entry"><span class="no">å anta</span> — <span class="en">to assume (to suppose something is true)</span></div>
+    <div class="word-entry"><span class="no">å behøve</span> — <span class="en">to need (synonym with å trenge)</span></div>
+    <div class="word-entry"><span class="no">å slippe (slapp, sluppet)</span> — <span class="en">to drop</span></div>
+    <div class="word-entry"><span class="no">å slippe (ut)</span> — <span class="en">to let out, to release</span></div>
+    <div class="word-entry"><span class="no">å slippe</span> — <span class="en">to not have to ('jeg må vaske opp, men broren min slipper')</span></div>
+    <div class="word-entry"><span class="no">å handle</span> — <span class="en">to act (to take action)</span></div>
+    <div class="word-entry"><span class="no">å handle om</span> — <span class="en">to be about (example: denne boken handler om planeter)</span></div>
+    <div class="word-entry"><span class="no">å handle med</span> — <span class="en">to trade with ('to have business with', not 'to swap something with something else')</span></div>
+    <div class="word-entry"><span class="no">å fortelle (fortalte, fortalt)</span> — <span class="en">to tell (told, told)</span></div>
+    <div class="word-entry"><span class="no">å overraske</span> — <span class="en">to surprise</span></div>
+    <div class="word-entry"><span class="no">å stige (steg, steget)</span> — <span class="en">to rise (rose, risen)</span></div>
+    <div class="word-entry"><span class="no">å vokse (2)</span> — <span class="en">to grow (grew, grown)</span></div>
+    <div class="word-entry"><span class="no">å møtes (møtes, møttes, møttes)</span> — <span class="en">to meet (used when the verb isn't followed by an object)</span></div>
+    <div class="word-entry"><span class="no">det føles (føles, føltes, føltes)</span> — <span class="en">it feels (used when the 'it' is the pronoun)</span></div>
+    <div class="word-entry"><span class="no">å synes (synes/syns, syntes, syntes)</span> — <span class="en">to think (to have an opinion about something)</span></div>
+    <div class="word-entry"><span class="no">å ses (ses, sås, settes)</span> — <span class="en">to be seen (example: de kan bare ses om natten)</span></div>
+    <div class="word-entry"><span class="no">å sees (sees, såes, settes)</span> — <span class="en">(orthographic variation of å ses, it means the same)</span></div>
+    <div class="word-entry"><span class="no">å lykkes (lykkes, lyktes, lyktes)</span> — <span class="en">to succeed</span></div>
+    <div class="word-entry"><span class="no">å mislykkes</span> — <span class="en">to fail (not a transitive verb)</span></div>
+    <div class="word-entry"><span class="no">å svikte</span> — <span class="en">to fail [someone or something] (transitive)</span></div>
+    <div class="word-entry"><span class="no">å trives (trives/trivs, trivdes, trivdes)</span> — <span class="en">to be enjoying oneself, to be having a good time (cognate with to thrive)</span></div>
+    <div class="word-entry"><span class="no">å respektere</span> — <span class="en">to respect</span></div>
+    <div class="word-entry"><span class="no">å fungere</span> — <span class="en">to work (as in to function)</span></div>
+    <div class="word-entry"><span class="no">å reparere</span> — <span class="en">to repair</span></div>
+    <div class="word-entry"><span class="no">å fikse</span> — <span class="en">to fix</span></div>
+    <div class="word-entry"><span class="no">å presentere</span> — <span class="en">to present / to introduce someone</span></div>
+    <div class="word-entry"><span class="no">å passere</span> — <span class="en">to pass by, to pass (someone or something while in motion)</span></div>
+    <div class="word-entry"><span class="no">å forberede seg på</span> — <span class="en">to prepare for</span></div>
+    <div class="word-entry"><span class="no">å oppføre seg</span> — <span class="en">to behave</span></div>
+    <div class="word-entry"><span class="no">å skynde seg (1a)(2)</span> — <span class="en">to hurry (up), to rush</span></div>
+    <div class="word-entry"><span class="no">å komme an på</span> — <span class="en">to depend on (situation might change depending on situation)</span></div>
+    <div class="word-entry"><span class="no">å avhenge av (avhang, avhengt)</span> — <span class="en">to depend on (synonym)</span></div>
+    <div class="word-entry"><span class="no">å gå glipp av</span> — <span class="en">to miss out</span></div>
+    <div class="word-entry"><span class="no">å være i ferd med [infinitive verb]</span> — <span class="en">to be about to [infinitive verb]</span></div>
+    <div class="word-entry"><span class="no">å gifte seg</span> — <span class="en">to get married</span></div>
+    <div class="word-entry"><span class="no">å skrive under</span> — <span class="en">to sign at the end of terms or papers</span></div>
+    <div class="word-entry"><span class="no">å minne [noen] på (2)</span> — <span class="en">to remind [someone] (about) (to tell someone there is something they should do)</span></div>
+    <div class="word-entry"><span class="no">å minne [noen] om (2)</span> — <span class="en">to remind [someone] about, of (to make someone remember or think of someone or something)</span></div>
+    <div class="word-entry"><span class="no">å hente</span> — <span class="en">to get something back, to retrieve / to pick up someone</span></div>
+    <div class="word-entry"><span class="no">å telle (1a)(2)(talte, talt)</span> — <span class="en">to count (amounts)</span></div>
+    <div class="word-entry"><span class="no">å jukse</span> — <span class="en">to cheat (to behave dishonestly to gain something)</span></div>
+    <div class="word-entry"><span class="no">å ødelegge</span> — <span class="en">to destroy</span></div>
+    <div class="word-entry"><span class="no">å misforstå</span> — <span class="en">to misunderstand</span></div>
+    <div class="word-entry"><span class="no">å påstå</span> — <span class="en">to claim (to state you think sth is true)</span></div>
+    <div class="word-entry"><span class="no">å snø</span> — <span class="en">to snow</span></div>
+    <div class="word-entry"><span class="no">å ligne på</span> — <span class="en">to look like, to resemble</span></div>
+    <div class="word-entry"><span class="no">å dukke opp</span> — <span class="en">to appear, to show up (å dukke means to duck. Similarly to å låse opp, it has the reverse meaning with the particle opp)</span></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 9: COMMON VERBS D ═══ -->
+<section class="verb4">
+  <h2>9. Vanlige verb D — Common Verbs D</h2>
+  <div class="content">
+    <div class="word-entry"><span class="no">å forklare</span> — <span class="en">to explain</span></div>
+    <div class="word-entry"><span class="no">å skjønne (2)</span> — <span class="en">to understand (to know the reason for something, or how something works)</span></div>
+    <div class="word-entry"><span class="no">å fortjene</span> — <span class="en">to deserve</span></div>
+    <div class="word-entry"><span class="no">å gjenta</span> — <span class="en">to repeat</span></div>
+    <div class="word-entry"><span class="no">å stave (1)</span> — <span class="en">to spell (spelt, spelt)</span></div>
+    <div class="word-entry"><span class="no">å feilstave</span> — <span class="en">to misspell</span></div>
+    <div class="word-entry"><span class="no">å falle (falt, falt)</span> — <span class="en">to fall (fell, fallen)</span></div>
+    <div class="word-entry"><span class="no">å ordne seg</span> — <span class="en">to work out, to be okay</span></div>
+    <div class="word-entry"><span class="no">å glede seg til (1)(3)</span> — <span class="en">to look forwards to</span></div>
+    <div class="word-entry"><span class="no">å forbedre</span> — <span class="en">to improve</span></div>
+    <div class="word-entry"><span class="no">å forandre</span> — <span class="en">to change (synonym with å endre)</span></div>
+    <div class="word-entry"><span class="no">å flytte</span> — <span class="en">to move (like in English, it can also mean to move to a new place)</span></div>
+    <div class="word-entry"><span class="no">å vurdere</span> — <span class="en">to consider (to think carefully)</span></div>
+    <div class="word-entry"><span class="no">å treffe (traff, truffet)</span> — <span class="en">it's a synonym of both å møte (to meet) and å slå (to hit)</span></div>
+    <div class="word-entry"><span class="no">å oversette</span> — <span class="en">to translate</span></div>
+    <div class="word-entry"><span class="no">å undervise</span> — <span class="en">to teach, to instruct</span></div>
+    <div class="word-entry"><span class="no">å la (lot, latt)</span> — <span class="en">to let (let, let)</span></div>
+    <div class="word-entry"><span class="no">å havne</span> — <span class="en">to end up, to wind up (wound up, wound up)</span></div>
+    <div class="word-entry"><span class="no">å bry seg om (brød)</span> — <span class="en">to care about (someone or something)</span></div>
+    <div class="word-entry"><span class="no">å tilgi</span> — <span class="en">to forgive</span></div>
+    <div class="word-entry"><span class="no">å skremme (2)</span> — <span class="en">to scare</span></div>
+    <div class="word-entry"><span class="no">å fornærme</span> — <span class="en">to insult</span></div>
+    <div class="word-entry"><span class="no">å angre</span> — <span class="en">to regret / to undo (computer)</span></div>
+    <div class="word-entry"><span class="no">å brekke (brakk, brukket)</span> — <span class="en">to break (broke, broken) (the physical 'to break')</span></div>
+    <div class="word-entry"><span class="no">å bryte (brøt, brutt)</span> — <span class="en">to break</span></div>
+    <div class="word-entry"><span class="no">å kaste</span> — <span class="en">to throw, to toss (threw, thrown)</span></div>
+    <div class="word-entry"><span class="no">å riste</span> — <span class="en">to shake (shook, shaken)</span></div>
+    <div class="word-entry"><span class="no">å riste på</span> — <span class="en">to shake (a part of one's body)</span></div>
+    <div class="word-entry"><span class="no">å nøle</span> — <span class="en">to hesitate</span></div>
+    <div class="word-entry"><span class="no">å krangle</span> — <span class="en">to argue</span></div>
+    <div class="word-entry"><span class="no">å motstå</span> — <span class="en">to resist</span></div>
+    <div class="word-entry"><span class="no">å reagere</span> — <span class="en">to react</span></div>
+    <div class="word-entry"><span class="no">å påvirke</span> — <span class="en">to influence</span></div>
+    <div class="word-entry"><span class="no">å spre (spredte, spredt)</span> — <span class="en">to spread (spread, spread)</span></div>
+    <div class="word-entry"><span class="no">å låne til</span> — <span class="en">to lend (lent, lent)</span></div>
+    <div class="word-entry"><span class="no">å låne av</span> — <span class="en">to borrow</span></div>
+    <div class="word-entry"><span class="no">å bytte</span> — <span class="en">to swap, to switch</span></div>
+    <div class="word-entry"><span class="no">å starte</span> — <span class="en">to start</span></div>
+    <div class="word-entry"><span class="no">å vekke</span> — <span class="en">to wake (up) (woke, woken) (someone else, not oneself)</span></div>
+    <div class="word-entry"><span class="no">å rulle</span> — <span class="en">to roll / to scroll</span></div>
+    <div class="word-entry"><span class="no">å gjette</span> — <span class="en">to guess</span></div>
+    <div class="word-entry"><span class="no">å bygge (1a)(3)</span> — <span class="en">to build (built, built)</span></div>
+    <div class="word-entry"><span class="no">å tømme (2)</span> — <span class="en">to empty</span></div>
+    <div class="word-entry"><span class="no">å stjele (stjal, stjålet)</span> — <span class="en">to steal (stole, stolen)</span></div>
+    <div class="word-entry"><span class="no">å stoppe</span> — <span class="en">to stop (all å slutte and å stanse meanings + to make or to stop functioning)</span></div>
+    <div class="word-entry"><span class="no">å advare</span> — <span class="en">to warn</span></div>
+    <div class="word-entry"><span class="no">å kjenne igjen, å gjenkjenne (2)</span> — <span class="en">to recognise (know sb or sth because you have seen, heard, known...)</span></div>
+    <div class="word-entry"><span class="no">å dytte</span> — <span class="en">to push</span></div>
+    <div class="word-entry"><span class="no">å forbli</span> — <span class="en">to remain, to stay (to continue to be in a particular state or condition)</span></div>
+    <div class="word-entry"><span class="no">å oppleve</span> — <span class="en">to experience</span></div>
+    <div class="word-entry"><span class="no">å flørte</span> — <span class="en">to flirt</span></div>
+    <div class="word-entry"><span class="no">å anbefale</span> — <span class="en">to recommend</span></div>
+    <div class="word-entry"><span class="no">å gjemme (2)</span> — <span class="en">to hide (hid, hidden) (to put something somewhere where it cannot be seen)</span></div>
+    <div class="word-entry"><span class="no">å gjemme seg for</span> — <span class="en">to hide from (to hide from someone)</span></div>
+    <div class="word-entry"><span class="no">å tvinge (tvang, tvunget)</span> — <span class="en">to force</span></div>
+    <div class="word-entry"><span class="no">å utsette</span> — <span class="en">to delay (to start something later than planned) (compare with å forsinke)</span></div>
+    <div class="word-entry"><span class="no">å krydre</span> — <span class="en">to season / to spice up (to make something more interesting)</span></div>
+    <div class="word-entry"><span class="no">å rane (1)</span> — <span class="en">to rob</span></div>
+    <div class="word-entry"><span class="no">å bli påkjørt</span> — <span class="en">to be run over (this verb is in the passive voice)</span></div>
+    <div class="word-entry"><span class="no">å skade (1)(3)</span> — <span class="en">to hurt (hurt, hurt), to injure, to damage</span></div>
+    <div class="word-entry"><span class="no">å fjerne</span> — <span class="en">to remove</span></div>
+    <div class="word-entry"><span class="no">å motta</span> — <span class="en">to receive</span></div>
+    <div class="word-entry"><span class="no">å erstatte</span> — <span class="en">to replace</span></div>
+    <div class="word-entry"><span class="no">å behandle</span> — <span class="en">to treat</span></div>
+    <div class="word-entry"><span class="no">å sammenligne</span> — <span class="en">to compare</span></div>
+    <div class="word-entry"><span class="no">å foreslå</span> — <span class="en">to suggest</span></div>
+    <div class="word-entry"><span class="no">å illustrere</span> — <span class="en">to illustrate</span></div>
+    <div class="word-entry"><span class="no">å lyve (løy, løyet)</span> — <span class="en">to lie (to tell untruths)</span></div>
+    <div class="word-entry"><span class="no">å lyge (løy, løyet)</span> — <span class="en">(alternative of å lyve)</span></div>
+    <div class="word-entry"><span class="no">å oppfinne / finne opp / finne på</span> — <span class="en">to invent</span></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 10: COMMON VERBS E ═══ -->
+<section class="verb5">
+  <h2>10. Vanlige verb E — Common Verbs E</h2>
+  <div class="content">
+    <div class="word-entry"><span class="no">å ombestemme (seg) (2)</span> — <span class="en">to change someone's mind, seg is used if it's reflexive</span></div>
+    <div class="word-entry"><span class="no">å tåle</span> — <span class="en">to tolerate, to put up with</span></div>
+    <div class="word-entry"><span class="no">å late som (lot, latt)</span> — <span class="en">to pretend</span></div>
+    <div class="word-entry"><span class="no">å våkne (opp)</span> — <span class="en">to wake (up) (woke, woken) (to wake oneself up, intransitive)</span></div>
+    <div class="word-entry"><span class="no">å snu (seg)</span> — <span class="en">to turn (transitive, or intransitive with seg)</span></div>
+    <div class="word-entry"><span class="no">å skifte</span> — <span class="en">(common verb) synonym of å bytte, also less often, of å endre and å forandre as well</span></div>
+    <div class="word-entry"><span class="no">å innføre</span> — <span class="en">to bring in, to introduce a concept</span></div>
+    <div class="word-entry"><span class="no">å tillate (tillot, tillatt)</span> — <span class="en">to allow</span></div>
+    <div class="word-entry"><span class="no">å unngå</span> — <span class="en">to avoid / to dodge</span></div>
+    <div class="word-entry"><span class="no">å forvente</span> — <span class="en">to expect</span></div>
+    <div class="word-entry"><span class="no">å vare i</span> — <span class="en">to last (for)</span></div>
+    <div class="word-entry"><span class="no">å godta</span> — <span class="en">to accept</span></div>
+    <div class="word-entry"><span class="no">å sjekke</span> — <span class="en">to check</span></div>
+    <div class="word-entry"><span class="no">å bevege seg (1)</span> — <span class="en">to move (oneself)</span></div>
+    <div class="word-entry"><span class="no">å spare</span> — <span class="en">to save up (for later)</span></div>
+    <div class="word-entry"><span class="no">å dekke (2)</span> — <span class="en">to cover</span></div>
+    <div class="word-entry"><span class="no">å distrahere</span> — <span class="en">to distract</span></div>
+    <div class="word-entry"><span class="no">å gjøre ferdig</span> — <span class="en">to finish</span></div>
+    <div class="word-entry"><span class="no">å senke</span> — <span class="en">to reduce / to sink (sank, sunk) (something else, it's a transitive verb)</span></div>
+    <div class="word-entry"><span class="no">å senke farten av, på</span> — <span class="en">to slow down (to reduce the speed of)</span></div>
+    <div class="word-entry"><span class="no">å mangle</span> — <span class="en">to lack</span></div>
+    <div class="word-entry"><span class="no">å kritisere</span> — <span class="en">to criticise</span></div>
+    <div class="word-entry"><span class="no">å nekte</span> — <span class="en">to refuse / to deny</span></div>
+    <div class="word-entry"><span class="no">å bli avhørt</span> — <span class="en">to be interrogated (this verb is in the passive voice)</span></div>
+    <div class="word-entry"><span class="no">å oppnå</span> — <span class="en">to achieve, to attain</span></div>
+    <div class="word-entry"><span class="no">å bli født</span> — <span class="en">to be born (this verb is in the passive voice)</span></div>
+    <div class="word-entry"><span class="no">å invitere</span> — <span class="en">to invite</span></div>
+    <div class="word-entry"><span class="no">å flyte (fløt, flytt)</span> — <span class="en">to float (on water, not in the air), to flow</span></div>
+    <div class="word-entry"><span class="no">å avgjøre</span> — <span class="en">to decide (synonym with å bestemme seg)</span></div>
+    <div class="word-entry"><span class="no">å utelukke</span> — <span class="en">to exclude, to rule out</span></div>
+    <div class="word-entry"><span class="no">å forvirre</span> — <span class="en">to confuse</span></div>
+    <div class="word-entry"><span class="no">å grave (grov)</span> — <span class="en">to dig (dug, dug)</span></div>
+    <div class="word-entry"><span class="no">å kartlegge</span> — <span class="en">to map</span></div>
+    <div class="word-entry"><span class="no">å klatre</span> — <span class="en">to climb</span></div>
+    <div class="word-entry"><span class="no">å stikke (stakk, stukket)</span> — <span class="en">to sting (stung, stung) / to stick (stuck, stuck) / to stab / to poke</span></div>
+    <div class="word-entry"><span class="no">å jage (1) (jog)</span> — <span class="en">to chase</span></div>
+    <div class="word-entry"><span class="no">å jakte på</span> — <span class="en">to hunt</span></div>
+    <div class="word-entry"><span class="no">å forsinke</span> — <span class="en">to delay (to cause something or someone to be late or slow) (compare with å utsette)</span></div>
+    <div class="word-entry"><span class="no">å forby (forbød, forbudt)</span> — <span class="en">to ban, to forbid, to prohibit</span></div>
+    <div class="word-entry"><span class="no">å bake</span> — <span class="en">to bake</span></div>
+    <div class="word-entry"><span class="no">å involvere</span> — <span class="en">to involve</span></div>
+    <div class="word-entry"><span class="no">å begrense</span> — <span class="en">to limit, to restrict</span></div>
+    <div class="word-entry"><span class="no">å trekke (trakk, trukket)</span> — <span class="en">to pull, to draw (as in to pull)</span></div>
+    <div class="word-entry"><span class="no">å vanne</span> — <span class="en">to water</span></div>
+    <div class="word-entry"><span class="no">å plante</span> — <span class="en">to plant</span></div>
+    <div class="word-entry"><span class="no">å så</span> — <span class="en">to sow (optional v3: sown), to seed</span></div>
+    <div class="word-entry"><span class="no">å plukke</span> — <span class="en">to pick (a flower, fruit, vegetable, etc), to pluck</span></div>
+    <div class="word-entry"><span class="no">å øke (1a)</span> — <span class="en">to increase</span></div>
+    <div class="word-entry"><span class="no">å tørre (tør, turte / torde, tort / turt)</span> — <span class="en">to dare (the next verb's å is optional)</span></div>
+    <div class="word-entry"><span class="no">å adoptere</span> — <span class="en">to adopt (all meanings)</span></div>
+    <div class="word-entry"><span class="no">å sovne</span> — <span class="en">to fall asleep (compare with å sove)</span></div>
+    <div class="word-entry"><span class="no">å ta vare på</span> — <span class="en">to take care of</span></div>
+    <div class="word-entry"><span class="no">å lure på</span> — <span class="en">to wonder</span></div>
+    <div class="word-entry"><span class="no">å lure</span> — <span class="en">to trick, to fool</span></div>
+    <div class="word-entry"><span class="no">å innse</span> — <span class="en">to realise</span></div>
+    <div class="word-entry"><span class="no">å misbruke</span> — <span class="en">to abuse</span></div>
+    <div class="word-entry"><span class="no">å diskutere</span> — <span class="en">to discuss / to debate</span></div>
+    <div class="word-entry"><span class="no">å oppdage (1)</span> — <span class="en">to discover</span></div>
+    <div class="word-entry"><span class="no">å begrave (1a) (begrov)</span> — <span class="en">to bury</span></div>
+    <div class="word-entry"><span class="no">å lide (led/lei, lidd/lidt)</span> — <span class="en">to suffer</span></div>
+    <div class="word-entry"><span class="no">å sørge (3)</span> — <span class="en">to mourn</span></div>
+    <div class="word-entry"><span class="no">å våge (1)</span> — <span class="en">to dare (synonym with å tørre)</span></div>
+    <div class="word-entry"><span class="no">å ende (2)</span> — <span class="en">to end</span></div>
+    <div class="word-entry"><span class="no">å ende opp</span> — <span class="en">to end up (synonym with å havne, it's like in English)</span></div>
+    <div class="word-entry"><span class="no">å avslutte</span> — <span class="en">to finish (more formal than å gjøre ferdig)</span></div>
+    <div class="word-entry"><span class="no">å bringe (brakte, brakt)</span> — <span class="en">to bring (brought, brought) (to make sth come to a place (compare with å ta med, they are not the same))</span></div>
+    <div class="word-entry"><span class="no">å brenne (brente, brent)</span> — <span class="en">to burn (burnt, burnt) (to set fire to)</span></div>
+    <div class="word-entry"><span class="no">å brenne (brant, brent)</span> — <span class="en">to burn (burnt, burnt) (to be on fire)</span></div>
+    <div class="word-entry"><span class="no">å forsvare</span> — <span class="en">to defend</span></div>
+    <div class="word-entry"><span class="no">å fatte</span> — <span class="en">to fathom, to comprehend, to understand</span></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 11: COMMON VERBS F ═══ -->
+<section class="verb6">
+  <h2>11. Vanlige verb F — Common Verbs F</h2>
+  <div class="content">
+    <div class="word-entry"><span class="no">å levere</span> — <span class="en">to deliver</span></div>
+    <div class="word-entry"><span class="no">å planlegge</span> — <span class="en">to plan</span></div>
+    <div class="word-entry"><span class="no">å samarbeide (3)</span> — <span class="en">to cooperate, to collaborate</span></div>
+    <div class="word-entry"><span class="no">å bekrefte</span> — <span class="en">to confirm</span></div>
+    <div class="word-entry"><span class="no">å gi [noen] beskjed</span> — <span class="en">to let [somoene] know (beskjed roughly translates to message)</span></div>
+    <div class="word-entry"><span class="no">å fylle ut (2)</span> — <span class="en">to fill out (a form, for example)</span></div>
+    <div class="word-entry"><span class="no">å høres (ut) (høres, hørtes, høres)</span> — <span class="en">to sound</span></div>
+    <div class="word-entry"><span class="no">å foregå</span> — <span class="en">to be taking place</span></div>
+    <div class="word-entry"><span class="no">å abonnere</span> — <span class="en">to subscribe</span></div>
+    <div class="word-entry"><span class="no">å bidra</span> — <span class="en">to contribute</span></div>
+    <div class="word-entry"><span class="no">å rope</span> — <span class="en">to shout</span></div>
+    <div class="word-entry"><span class="no">å lyse opp</span> — <span class="en">to brighten up (figurative or literal)</span></div>
+    <div class="word-entry"><span class="no">å etablere</span> — <span class="en">to establish</span></div>
+    <div class="word-entry"><span class="no">å observere</span> — <span class="en">to observe</span></div>
+    <div class="word-entry"><span class="no">å utforske</span> — <span class="en">to explore</span></div>
+    <div class="word-entry"><span class="no">å kreve (1a)</span> — <span class="en">to require</span></div>
+    <div class="word-entry"><span class="no">å spionere på</span> — <span class="en">to spy on (all contexts)</span></div>
+    <div class="word-entry"><span class="no">å avvise</span> — <span class="en">to reject (general use)</span></div>
+    <div class="word-entry"><span class="no">å skjule</span> — <span class="en">to hide (to put sth somewhere where it can't be seen / to keep information or feelings secret)</span></div>
+    <div class="word-entry"><span class="no">å legge merke til</span> — <span class="en">to notice</span></div>
+    <div class="word-entry"><span class="no">å merke at</span> — <span class="en">to notice (that)</span></div>
+    <div class="word-entry"><span class="no">å overvåke (1)</span> — <span class="en">to watch, to monitor</span></div>
+    <div class="word-entry"><span class="no">å fange</span> — <span class="en">to catch (caught, caught) / to capture / to trap</span></div>
+    <div class="word-entry"><span class="no">å grunnlegge</span> — <span class="en">to found</span></div>
+    <div class="word-entry"><span class="no">å dømme (2)</span> — <span class="en">to judge (all contexts)</span></div>
+    <div class="word-entry"><span class="no">å krympe</span> — <span class="en">to shrink (shrank, shrunk)</span></div>
+    <div class="word-entry"><span class="no">å koke</span> — <span class="en">to boil</span></div>
+    <div class="word-entry"><span class="no">å steke</span> — <span class="en">to fry / to roast</span></div>
+    <div class="word-entry"><span class="no">å smelte</span> — <span class="en">to melt</span></div>
+    <div class="word-entry"><span class="no">å parkere</span> — <span class="en">to park</span></div>
+    <div class="word-entry"><span class="no">å kose seg med (1)</span> — <span class="en">to snuggle, to cuddle with</span></div>
+    <div class="word-entry"><span class="no">å kose seg (1)</span> — <span class="en">to have a good time (intransitive verb)</span></div>
+    <div class="word-entry"><span class="no">å trøste</span> — <span class="en">to comfort, to console</span></div>
+    <div class="word-entry"><span class="no">å forlove seg (1)</span> — <span class="en">to get engaged</span></div>
+    <div class="word-entry"><span class="no">å lengte etter</span> — <span class="en">to long for, to yearn for</span></div>
+    <div class="word-entry"><span class="no">å slå opp</span> — <span class="en">to break up</span></div>
+    <div class="word-entry"><span class="no">å overnatte</span> — <span class="en">to spend the night</span></div>
+    <div class="word-entry"><span class="no">å skille (2)</span> — <span class="en">to separate</span></div>
+    <div class="word-entry"><span class="no">å seile (2)</span> — <span class="en">to sail</span></div>
+    <div class="word-entry"><span class="no">å segle</span> — <span class="en">(variation of å seile)</span></div>
+    <div class="word-entry"><span class="no">å fiske</span> — <span class="en">to fish</span></div>
+    <div class="word-entry"><span class="no">å drukne</span> — <span class="en">to drown</span></div>
+    <div class="word-entry"><span class="no">å synke (sank, sunket)</span> — <span class="en">to sink (sank, sunk) (intransitive, the subject of the sentence sinks)</span></div>
+    <div class="word-entry"><span class="no">å omkomme</span> — <span class="en">to perish (to die in an accident, such as a sinking ship)</span></div>
+    <div class="word-entry"><span class="no">å overleve</span> — <span class="en">to survive</span></div>
+    <div class="word-entry"><span class="no">å nyte (nøt, nytt)</span> — <span class="en">to enjoy</span></div>
+    <div class="word-entry"><span class="no">å skuffe</span> — <span class="en">to disappoint</span></div>
+    <div class="word-entry"><span class="no">å kopiere</span> — <span class="en">to copy</span></div>
+    <div class="word-entry"><span class="no">å klippe (2)</span> — <span class="en">to cut (with scissors)</span></div>
+    <div class="word-entry"><span class="no">å resirkulere</span> — <span class="en">to recycle</span></div>
+  </div>
+</section>
+
+</div><!-- end columns -->
+
+</body>
+</html>
